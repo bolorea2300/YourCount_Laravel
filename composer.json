@@ -46,7 +46,13 @@
         ],
         "post-create-project-cmd": [
             "@php artisan key:generate --ansi"
-        ]
+        ],
+        "scripts": {
+            "vercel": [
+                "@php artisan config:cache",
+                "@php artisan migrate"
+            ]
+        }
     },
     "extra": {
         "laravel": {
