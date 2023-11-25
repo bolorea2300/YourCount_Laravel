@@ -18,6 +18,11 @@ return new class extends Migration
             $table->string('title');
             $table->integer('number');
             $table->timestamps();
+
+            $table->foreign('user_id')
+                ->references('id')
+                ->on('users')
+                ->onDelete('cascade');
         });
     }
 
